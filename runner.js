@@ -6,7 +6,7 @@ const transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'qamukesh01@gmail.com',
-    pass: 'octd oslj zrjd uuzz' // Not your login password, a Google App Password
+    pass: 'xxxx xxxx xxxx xxxx' // Not your login password, a Google App Password
   }
 });
 
@@ -21,7 +21,7 @@ cypress.run({
 
   const mailOptions = {
     from: 'qamukesh01@gmail.com',
-    to: 'qamihir@gmail.com', //contact+testqa5@premio.io,
+    to: 'contact+testqa5@premio.io, qamihir@gmail.com',
     subject: `${color} Mukesh K.(Coupon X) Cypress Test Result: ${status}`,
     text: `The Coupon X Automation test has finished.\n\nResult: ${status}\nTotal Tests: ${results.totalTests}\nPassed: ${results.totalPassed}\nFailed: ${results.totalFailed}\nDuration: ${results.totalDuration / 1000} seconds.`
   };
