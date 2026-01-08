@@ -8,7 +8,7 @@ describe('Coupon X Automation Task', () => {
     cy.get('#wp-submit').click();
 
     // Verify login success
-    cy.get('#adminmenu', { timeout: 120 }).should('be.visible');
+    cy.get('#adminmenu', { timeout: 12000 }).should('be.visible');
 
     // --- STEP 2: INSTALL & ACTIVATE ---
     cy.visit('http://qamukesh.local:10003/wp-admin/plugin-install.php?s=coupon-x-discount-pop-up&tab=search&type=term');
@@ -63,9 +63,10 @@ describe('Coupon X Automation Task', () => {
 
     cy.contains('Check out our latest collection', { timeout: 25000 }) // Wait for the widget to load
       .should('be.visible');
+      cy.wait(5000);
 
     cy.get('.coupon-tab-close').click({ force: true }); // Click the close button
     cy.contains('Check out our latest collection').should('not.be.visible'); // Verify widget is gone
-    
+    cy.wait(5000);
   }); 
 });
